@@ -1,11 +1,15 @@
 ﻿using System.Windows.Forms;
 
-namespace AStyleExtension {
-    public sealed partial class AStyleEditForm : Form {
-        public AStyleEditForm(Language language) {
+namespace AStyleExtension
+{
+    public sealed partial class AStyleEditForm : Form
+    {
+        public AStyleEditForm(Language language)
+        {
             InitializeComponent();
 
-            switch (language) {
+            switch (language)
+            {
                 case Language.CSharp:
                     Text = "Edit AStyle C# Command Line";
                     break;
@@ -17,11 +21,13 @@ namespace AStyleExtension {
             ActiveControl = buttonCancel;
         }
 
-        public void SetCommandLine(string command) {
+        public void SetCommandLine(string command)
+        {
             textBoxCommandLine.Text = command;
-        } 
+        }
 
-        public string GetCommandLine() {
+        public string GetCommandLine()
+        {
             return textBoxCommandLine.Text;
         }
     }

@@ -1,12 +1,14 @@
-﻿using System;
+﻿using Microsoft.VisualStudio.Shell;
+using System;
 using System.ComponentModel;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
-using Microsoft.VisualStudio.Shell;
 
-namespace AStyleExtension {
+namespace AStyleExtension
+{
     [CLSCompliant(false), ComVisible(true)]
-    public class AStyleGeneralOptionsPage : DialogPage {
+    public class AStyleGeneralOptionsPage : DialogPage
+    {
         private AStyleGeneralOptionsControl _control;
 
         public string CppOptions { get; set; }
@@ -15,20 +17,25 @@ namespace AStyleExtension {
         public bool CsFormatOnSave { get; set; }
         public bool IsCSarpEnabled { get; set; }
 
-        public AStyleGeneralOptionsPage() {
+        public AStyleGeneralOptionsPage()
+        {
             IsCSarpEnabled = true;
         }
 
         [Browsable(false), DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-        protected override IWin32Window Window {
-            get {
+        protected override IWin32Window Window
+        {
+            get
+            {
                 _control = new AStyleGeneralOptionsControl();
 
-                if (CppOptions != null) {
+                if (CppOptions != null)
+                {
                     _control.CppOptions = CppOptions;
                 }
 
-                if (CsOptions != null) {
+                if (CsOptions != null)
+                {
                     _control.CsOptions = CsOptions;
                 }
 
@@ -40,19 +47,23 @@ namespace AStyleExtension {
             }
         }
 
-        protected override void OnDeactivate(CancelEventArgs e) {
-            if (_control != null) {
+        protected override void OnDeactivate(CancelEventArgs e)
+        {
+            if (_control != null)
+            {
                 CppOptions = _control.CppOptions;
                 CsOptions = _control.CsOptions;
                 CppFormatOnSave = _control.CppFormatOnSave;
                 CsFormatOnSave = _control.CsFormatOnSave;
             }
 
-            base.OnDeactivate(e);           
+            base.OnDeactivate(e);
         }
 
-        protected override void OnActivate(CancelEventArgs e) {
-            if (_control != null) {
+        protected override void OnActivate(CancelEventArgs e)
+        {
+            if (_control != null)
+            {
                 _control.CppOptions = CppOptions;
                 _control.CsOptions = CsOptions;
                 _control.CppFormatOnSave = CppFormatOnSave;
@@ -64,8 +75,10 @@ namespace AStyleExtension {
             base.OnActivate(e);
         }
 
-        protected override void OnApply(PageApplyEventArgs e) {
-            if (_control != null) {
+        protected override void OnApply(PageApplyEventArgs e)
+        {
+            if (_control != null)
+            {
                 CppOptions = _control.CppOptions;
                 CsOptions = _control.CsOptions;
                 CppFormatOnSave = _control.CppFormatOnSave;

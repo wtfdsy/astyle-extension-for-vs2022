@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26228.4
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33627.172
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AStyleExtension", "AStyleExtension\AStyleExtension2017.csproj", "{800677F7-E2C4-4D91-840A-D28D04C291CD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AStyleExtension2022", "AStyleExtension\AStyleExtension2022.csproj", "{800677F7-E2C4-4D91-840A-D28D04C291CD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
